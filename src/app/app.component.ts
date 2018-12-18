@@ -4,11 +4,24 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
 import { HomePage } from '../pages/home/home';
+import { EtatPage } from '../pages/etat/etat';
+import { MeteoPage } from '../pages/meteo/meteo';
+import { PlacesPage } from '../pages/places/places';
+import { DetailService } from '../pages/detail/detail.service';
 @Component({
   templateUrl: 'app.html'
+  
+  
 })
 export class MyApp {
-  rootPage:any = HomePage;
+  
+  rootPage:any = EtatPage;
+  menus=[
+    {title: 'My Etat', component:EtatPage},
+    {title: 'My Meteo', component:MeteoPage},
+    {title: 'My Places', component:PlacesPage},
+    {title: 'My Home', component:HomePage},
+  ]
 
   constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen) {
     platform.ready().then(() => {
@@ -17,6 +30,10 @@ export class MyApp {
       statusBar.styleDefault();
       splashScreen.hide();
     });
+  }
+
+  onPage(m) : void {
+    this.rootPage=m.component;
   }
 }
 

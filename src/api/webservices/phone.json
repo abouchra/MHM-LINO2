@@ -1,0 +1,9 @@
+{
+    "error": "StringErr",
+    "numeroQueuing" : "StringNumQY",
+    "nbrPersonnesDevant" : "StringNBR",
+    "tempsAttente" : "Stringtatt",
+    "notifierUser" : "booleannOTF",
+    "popup" : "StringPop"
+ }
+ 
